@@ -1,0 +1,21 @@
+{
+  "id": "terminal",
+  "name": "终端",
+  "version": "0.1.0",
+  "description": "在 Windows 上执行命令，把标准输出和退出码返回给模型。带危险命令黑名单。",
+  "author": "yushuchun177",
+  "homepage": "https://github.com/yushuchun177/localharness-plugin-terminal",
+  "min_app": "0.1.0",
+  "tools": [
+    {
+      "name": "terminal_run",
+      "description": "执行一条命令（cmd.exe /c），返回 stdout、stderr 和退出码。适合看文件、查系统信息、跑小脚本。",
+      "params": {
+        "command": "string，要执行的命令",
+        "cwd": "string，可选，工作目录",
+        "timeout": "int，可选，超时秒数，默认 30"
+      },
+      "dangerous": true
+    }
+  ]
+}
