@@ -37,6 +37,13 @@
       "placeholder": "format,diskpart"
     }
   ],
+  "commands": [
+    {
+      "name": "sh",
+      "description": "执行一条命令",
+      "usage": "/sh dir"
+    }
+  ],
   "tools": [
     {
       "name": "terminal_run",
