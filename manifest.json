@@ -3,6 +3,7 @@
   "name": "终端",
   "name_en": "Terminal",
   "version": "0.1.0",
+  "license": "GPL-3.0",
   "description": "在 Windows 上执行命令，把标准输出和退出码返回给模型。带危险命令黑名单。",
   "description_en": "Run commands on Windows and return output, with a dangerous-command denylist.",
   "author": "yushuchun177",
