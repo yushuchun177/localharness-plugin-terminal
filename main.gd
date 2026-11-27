@@ -89,3 +89,10 @@ $ProgressPreference = 'SilentlyContinue'
 $out = & cmd.exe /c "chcp 65001 >nul & CMDLINE" 2>&1 | Out-String
 [System.IO.File]::WriteAllText('OUTFILE', $out, [System.Text.Encoding]::UTF8)
 """.replace("CMDLINE", inner).replace("OUTFILE", out_file.replace("'", "''"))
+
+func on_command(cmd: String, args: String) -> Dictionary:
+	if cmd != "sh":
+		return {"ok": false, "output": "未知命令"}
+	if args.strip_edges() == "":
+		return {"ok": false, "output": "用法：/sh <命令>"}
+	return run("terminal_run", {"command": args.strip_edges()})
