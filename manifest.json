@@ -19,5 +19,21 @@
       },
       "dangerous": true
     }
+  ],
+  "settings": [
+    {
+      "key": "timeout",
+      "label": "默认超时（秒）",
+      "type": "int",
+      "default": 30,
+      "help": "命令超过这个时间会被强制结束"
+    },
+    {
+      "key": "extra_deny",
+      "label": "额外禁止的命令",
+      "type": "string",
+      "default": "",
+      "help": "逗号分隔，例如 format,diskpart；留空表示只用内置黑名单"
+    }
   ]
 }
