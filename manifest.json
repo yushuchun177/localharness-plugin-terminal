@@ -8,6 +8,35 @@
   "author": "yushuchun177",
   "homepage": "https://github.com/yushuchun177/localharness-plugin-terminal",
   "min_app": "0.1.0",
+  "requires": {
+    "os": "Windows 10+",
+    "deps": [
+      "PowerShell"
+    ],
+    "disk": "< 1 MB",
+    "memory": "约 10 MB",
+    "network": false
+  },
+  "settings": [
+    {
+      "key": "timeout",
+      "label": "默认超时（秒）",
+      "type": "int",
+      "default": 30,
+      "help": "命令超过这个时间会被强制结束",
+      "min": 1,
+      "max": 600,
+      "unit": "秒"
+    },
+    {
+      "key": "extra_deny",
+      "label": "额外禁止的命令",
+      "type": "string",
+      "default": "",
+      "help": "逗号分隔，例如 format,diskpart；留空表示只用内置黑名单",
+      "placeholder": "format,diskpart"
+    }
+  ],
   "tools": [
     {
       "name": "terminal_run",
@@ -17,23 +46,12 @@
         "cwd": "string，可选，工作目录",
         "timeout": "int，可选，超时秒数，默认 30"
       },
-      "dangerous": true
-    }
-  ],
-  "settings": [
-    {
-      "key": "timeout",
-      "label": "默认超时（秒）",
-      "type": "int",
-      "default": 30,
-      "help": "命令超过这个时间会被强制结束"
-    },
-    {
-      "key": "extra_deny",
-      "label": "额外禁止的命令",
-      "type": "string",
-      "default": "",
-      "help": "逗号分隔，例如 format,diskpart；留空表示只用内置黑名单"
+      "dangerous": true,
+      "level": "danger",
+      "needs": [
+        "启动进程",
+        "读写文件"
+      ]
     }
   ]
 }
